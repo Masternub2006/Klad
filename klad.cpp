@@ -12,16 +12,13 @@ int main()
 	int c = 0;
 	int x = 0;
 	int y = 0;
-	//int* m = new int[];
 	cout<<"Stroki: ";
 	cin >> a;
 	cout<<"Stolbci: ";
 	cin >> b;
 	cout<<"Kolichestvo kladov: ";
 	cin >> c;
-	//x = c * 2;
 	int* m = new int[c*2];
-	//cout << sizeof(m)/sizeof(*m);
 	int** n = new int* [a];
 	for (int i = 0; i <=c-1; i++)
 	{
@@ -31,39 +28,19 @@ int main()
 		cin >> y;
 		m[i * 2] = x;
 		m[i * 2 + 1] = y;
-		//cout<<"-"<<m[i*2]<<" "<<m[i*2+1]<<endl;
 	}
-	//cout<<"\n \n";
 	for (int i = 0; i < a; i++)
 	{
 		n[i] = new int[b];
 		for (int l = 0; l<b; l++)
 		{
 			n[i][l] = -1;
-			//cout << n[i][l];
 		}
-		//cout << "\n";
 	}
 	for (int k = 0; k<c*2; k+=2)
 	{
 		n[m[k]-1][m[k+1]-1] = 0;
 	}
-	//cout<<"\n";
-	/*for (int i = 0; i < a; i++)
-	{
-		for (int l = 0; l<b; l++)
-		{
-			if(n[i][l] == -1)
-			{
-				cout<<" "<<n[i][l];
-			}
-			else
-			{
-				cout <<"  "<< n[i][l];
-			}
-		}
-		cout << "\n";
-	}//*/
 
 	int g = 0;
 	list<int> p;
@@ -116,7 +93,6 @@ int main()
 									n[i][l] = *min_element(p.begin(),p.end())+1;
 								}
 							}
-							//n[i][l] = *min_element(p.begin(),p.end());
 							g=0;
 							p.clear();
 							break;
@@ -478,7 +454,6 @@ int main()
 					}
 				}
 			}
-			//cout<<"i "<<i<<endl;
 		}
 	}
 
